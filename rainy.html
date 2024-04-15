@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('../static/css/rainybg.jpeg'); /* Background image of a rainy scene */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            animation: fall 1.5s linear infinite;
+        }
+        .raindrop:nth-child(1) {
+            left: 5%;
+            animation-delay: 0s; 
+        }
+        .raindrop:nth-child(2) {
+            left: 10%; 
+            animation-delay: 0.2s;
+        }
+        .raindrop:nth-child(3) {
+            left: 15%;
+            animation-delay: 0.4s;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(45vh);
+            }
+        }
+        
+        .weather-info {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative; /* Required for stacking order */
+            z-index: 1; /* Ensure weather info is above raindrops */
+        }
+        .rainy-img {
+            width: 250px; /* Adjust the width as needed */
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .thank-you {
+            color: #444;
+            font-size: 16px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .info-btn {
+            color: #fff;
+            background: rgb(4, 4, 96);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin: 15px;
+        }
+
+        .info-btn:hover {
+            background: #072a33;
+        }
+    </style>
+</head>
+<body>
+    <!-- Raindrops -->
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    <div class="raindrop"></div>
+    
+    <!-- Weather Info -->
+    <div class="weather-info">
+        <img class="rainy-img" src="../static/css/rainy.jpeg" alt="Rainy Image">
+        <h1>Weather Forecast for Tomorrow</h1>
+        <p>The weather tomorrow will be rainy.</p>
+        
+        <a class="info-btn" href="/">Predict Again</a>
+       
+    </div>
+</body>
+</html>

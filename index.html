@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainfall Prediction</title>
+  <link rel="stylesheet" href="../static/css/main.css">
+</head>
+
+<body>
+
+  <nav>
+    <header class="nav-container">
+      <div class="navigation">
+        <a onclick="navFunction('home')">Home</a>
+        <a onclick="navFunction('about')">About Our Project</a>
+        <a onclick="navFunction('predict')">Start Prediction</a>
+      </div>
+    </header>
+  </nav>
+
+  <section id="home">
+    <div class="content">
+      <div class="info">
+        <h2>Rainfall Prediction <br><span>Project</span></h2>
+        <p>Welcome to Rainyfall Prediction Project, a web application powered by machine learning technology. Our goal
+          is to accurately predict rainfall for the next day, leveraging advanced algorithms trained on the Rain
+          Prediction in
+          Australia dataset. This website will help you to explore our project and predict the rainfall by giving few
+          input values.</p>
+        <a class="info-btn" onclick="navFunction('about')">More info</a>
+        <a class="info-btn" onclick="navFunction('predict')">Predict</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="hidden">
+    <div>
+      <h2>About Our Project</h2>
+      <p class="about-content">This is our web app which has a Machine Learning model running at the back. The purpose
+        of developing this app is to predict whether it will rain the next day or not. This model is based on the Rain
+        Prediction in Australia dataset. The codes for this project can be checked in my <a
+          href="https://github.com/ishwar-ikm/Mini_Project">GitHub
+          repo</a>. The complex nature of rainfall, influenced by various atmospheric, oceanic, and geographical
+        factors,
+        makes it a challenging phenomenon to forecast. This research employs data preprocessing techniques, outlier
+        analysis, correlation analysis, feature selection, and several machine learning algorithms such as Naive Bayes
+        (NB), Decision Tree, Support Vector Machine (SVM), Random Forest, and Logistic Regression. The study focuses on
+        developing the most accurate rainfall prediction model by utilizing machine learning and feature selection
+        techniques. Furthermore, k-means clustering and Principal Component Analysis (PCA) are applied to examine
+        regional rainfall patterns in Australia.</p>
+    </div>
+  </section>
+
+  <section id="predict" class="hidden">
+    <form action="/predict" method="POST" class="form">
+      <h1 class="ph1">Predict Rainfall</h1>
+      <div class="ml-input">
+        <div class="row">
+          <div class="col1">
+            <div>
+              <input type="number" id="date" name="date" placeholder="Month" required>
+            </div>
+            <div>
+              <input type="text" id="mintemp" name="mintemp" placeholder="Minimum Temperature" required>
+            </div>
+            <div>
+              <input type="text" id="maxtemp" name="maxtemp" placeholder="Maximum Temperature" required>
+            </div>
+            <div>
+              <input type="text" id="rainfall" name="rainfall" placeholder="Rainfall in cm" required>
+            </div>
+            <div>
+              <input type="text" id="evaporation" name="evaporation" placeholder="Evaporation" required>
+            </div>
+            <div>
+              <input type="text" id="sunshine" name="sunshine" placeholder="Sunshine" required>
+            </div>
+          </div>
+          <div class="col2">
+            <div>
+              <input type="text" id="windgustspeed" name="windgustspeed" placeholder="Wind Gust Speed" required>
+            </div>
+            <div>
+              <input type="text" id="windspeed9am" name="windspeed9am" placeholder="Wind Speed 9am" required>
+            </div>
+            <div>
+              <input type="text" id="windspeed3pm" name="windspeed3pm" placeholder="Wind Speed 3pm" required>
+            </div>
+            <div>
+              <input type="text" id="humidity9am" name="humidity9am" placeholder="Humidity 9am" required>
+            </div>
+            <div>
+              <input type="text" id="humidity3pm" name="humidity3pm" placeholder="Humidity 3pm" required>
+            </div>
+            <div>
+              <input type="text" id="pressure9am" name="pressure9am" placeholder="Pressure 9am" required>
+            </div>
+          </div>
+          <div class="col3">
+            <div>
+              <input type="text" id="pressure3pm" name="pressure3pm" placeholder="Pressure 3pm" required>
+            </div>
+            <div>
+              <input type="text" id="temp9am" name="temp9am" placeholder="Temperature 9am" required>
+            </div>
+            <div>
+              <input type="text" id="temp3pm" name="temp3pm" placeholder="Temperature 3pm" required>
+            </div>
+            <div>
+              <input type="text" id="cloud9am" name="cloud9am" placeholder="Cloud 9am" required>
+            </div>
+            <div>
+              <input type="text" id="cloud3pm" name="cloud3pm" placeholder="Cloud 3pm" required>
+            </div>
+            <div>
+              <select id="location" name="location" aria-label="Location">
+                <option selected>Select Location</option>
+                  <option value=24>Adelaide</option>
+                  <option value=7>Albany</option>
+                  <option value=30>Albury</option>
+                  <option value=46>AliceSprings</option>
+                  <option value=33>BadgerysCreek</option>
+                  <option value=14>Ballarat</option>
+                  <option value=36>Bendigo</option>
+                  <option value=21>Brisbane</option>
+                  <option value=2>Cairns</option>
+                  <option value=43>Cobar</option>
+                  <option value=9>CoffsHarbour</option>
+                  <option value=4>Dartmoor</option>
+                  <option value=11>Darwin</option>
+                  <option value=15>GoldCoast</option>
+                  <option value=17>Hobart</option>
+                  <option value=45>Katherine</option>
+                  <option value=23>Launceston</option>
+                  <option value=28>Melbourne</option>
+                  <option value=25>Melbourne Airport</option>
+                  <option value=44>Mildura</option>
+                  <option value=42>Moree</option>
+                  <option value=5>MountGambier</option>
+                  <option value=12>MountGinini</option>
+                  <option value=19>Newcastle </option>
+                  <option value=47>Nhil</option>
+                  <option value=13>NorahHead</option>
+                  <option value=6>NorfolkIsland</option>
+                  <option value=32>Nuriootpa</option>
+                  <option value=40>PearceRAAF</option>
+                  <option value=31>Penrith</option>
+                  <option value=26>Perth</option>
+                  <option value=35>Perth Airport</option>
+                  <option value=1>Portland</option>
+                  <option value=37>Richmond</option>
+                  <option value=27>Sale</option>
+                  <option value=41>Salmon Gums</option>
+                  <option value=10>Sydney</option>
+                  <option value=16>Sydney Airport</option>
+                  <option value=39>Townsville</option>
+                  <option value=34>Tuggeranong</option>
+                  <option value=49>Uluru</option>
+                  <option value=38>WaggaWagga</option>
+                  <option value=3>Walpole</option>
+                  <option value=18>Watsonia</option>
+                  <option value=22>William Town</option>
+                  <option value=8>Witchcliffe</option>
+                  <option value=20>Wollongong</option>
+                  <option value=48>Woomera</option>
+              </select>
+            </div>
+          </div>
+          <div class="col4">
+            <div>
+              <select id="winddir9am" name="winddir9am" aria-label="Wind Direction 9am">
+                <option selected>Wind Direction 9am</option>
+                <option value=1>N</option>
+                <option value=5>W</option>
+                <option value=10>S</option>
+                <option value=15>E</option>
+                <option value=2>NW</option>
+                <option value=9>NE</option>
+                <option value=7>SW</option>
+                <option value=13>SE</option>
+                <option value=0>NNW</option>
+                <option value=3>NNE</option>
+                <option value=8>SSW</option>
+                <option value=11>SSE</option>
+                <option value=4>WNW</option>
+                <option value=6>WSW</option>
+                <option value=12>ENE</option>
+                <option value=14>ESE</option>
+              </select>
+            </div>
+            <div>
+              <select id="winddir3pm" name="winddir3pm" aria-label="Wind Direction at 3pm">
+                <option selected>Wind Direction 3pm</option>
+                <option value=2>N</option>
+                <option value=4>W</option>
+                <option value=8>S</option>
+                <option value=14>E</option>
+                <option value=0>NW</option>
+                <option value=11>NE</option>
+                <option value=9>SW</option>
+                <option value=10>SE</option>
+                <option value=1>NNW</option>
+                <option value=5>NNE</option>
+                <option value=7>SSW</option>
+                <option value=12>SSE</option>
+                <option value=3>WNW</option>
+                <option value=6>WSW</option>
+                <option value=13>ENE</option>
+                <option value=15>ESE</option>
+              </select>
+            </div>
+            <div>
+              <select id="windgustdir" name="windgustdir" aria-label="Wind Gust Direction">
+                <option selected>Wind Gust Direction</option>
+                <option value=3>N</option>
+                <option value=4>W</option>
+                <option value=7>S</option>
+                <option value=15>E</option>
+                <option value=1>NW</option>
+                <option value=11>NE</option>
+                <option value=9>SW</option>
+                <option value=12>SE</option>
+                <option value=0>NNW</option>
+                <option value=6>NNE</option>
+                <option value=8>SSW</option>
+                <option value=10>SSE</option>
+                <option value=2>WNW</option>
+                <option value=5>WSW</option>
+                <option value=14>ENE</option>
+                <option value=13>ESE</option>
+              </select>
+            </div>
+            <div>
+              <select id="raintoday" name="raintoday" aria-label="Rain Today">
+                <option selected>Did it Rain Today</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div>
+        <button type="submit">Predict</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    Developed by Ishwar Kumar Mishra, Naman Gangrade, and Prithvi Suresh.
+  </footer>
+
+  <script src="../static/js/index.js"></script>
+</body>
+
+</html>
