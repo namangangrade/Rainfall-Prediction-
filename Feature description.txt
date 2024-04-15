@@ -1,0 +1,45 @@
+1. Date (Data Type: Object, Type: Categorical): Represents the date of the recorded weather data. Categorical because it denotes temporal information.
+
+2. Location (Data Type: Object, Type: Categorical): Denotes the geographical location of the weather observation. Categorical as it represents different locations.
+
+3. MinTemp (Data Type: Float, Type: Numerical): Indicates the minimum temperature on the given day. Numerical as it represents a continuous range of temperature values.
+
+4. MaxTemp (Data Type: Float, Type: Numerical): Represents the maximum temperature on the given day. Numerical, indicating a continuous range of temperature values.
+
+5. Rainfall (Data Type: Float, Type: Numerical): The amount of rainfall on the given day. Numerical, representing the quantity of precipitation.
+
+6. Evaporation (Data Type: Object, Type: Numerical): Amount of water evaporated on the given day. Numerical, indicating the continuous process of water evaporation.
+
+7. Sunshine (Data Type: Object, Type: Numerical): Number of hours of sunshine on the given day. Numerical, measuring the duration of sunlight.
+
+8. WindGustDir (Data Type: Object, Type: Categorical): Direction of the strongest wind gust. Categorical, representing different compass directions.
+
+9. WindGustSpeed (Data Type: Float, Type: Numerical): Speed of the strongest wind gust. Numerical, indicating wind strength.
+
+10. WindDir9am (Data Type: Object, Type: Categorical): Wind direction at 9 am. Categorical, representing different compass directions.
+
+11. WindDir3pm (Data Type: Object, Type: Categorical): Wind direction at 3 pm. Categorical, representing different compass directions.
+
+12. WindSpeed9am (Data Type: Float, Type: Numerical): Wind speed at 9 am. Numerical, indicating wind strength.
+
+13. WindSpeed3pm (Data Type: Float, Type: Numerical): Wind speed at 3 pm. Numerical, indicating wind strength.
+
+14. Humidity9am (Data Type: Float, Type: Numerical): Humidity level at 9 am. Numerical, representing the percentage of humidity.
+
+15. Humidity3pm (Data Type: Float, Type: Numerical): Humidity level at 3 pm. Numerical, representing the percentage of humidity.
+
+16. Pressure9am (Data Type: Float, Type: Numerical): Atmospheric pressure at 9 am. Numerical, measuring air pressure.
+
+17. Pressure3pm (Data Type: Float, Type: Numerical): Atmospheric pressure at 3 pm. Numerical, measuring air pressure.
+
+18. Cloud9am (Data Type: Object, Type: Categorical): Cloud cover at 9 am. Categorical, representing different levels of cloudiness.
+
+19. Cloud3pm (Data Type: Object, Type: Categorical): Cloud cover at 3 pm. Categorical, representing different levels of cloudiness.
+
+20. Temp9am (Data Type: Float, Type: Numerical): Temperature at 9 am. Numerical, representing the morning temperature.
+
+21. Temp3pm (Data Type: Float, Type: Numerical): Temperature at 3 pm. Numerical, representing the afternoon temperature.
+
+22. RainToday (Data Type: Object, Type: Categorical): Whether there was any rainfall on the given day (Yes/No). Categorical, indicating the presence or absence of rain.
+
+23. RainTomorrow (Data Type: Object, Type: Categorical): The target variable indicating whether it will rain tomorrow (Yes/No). Categorical, representing the outcome to be predicted.
